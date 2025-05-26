@@ -1,0 +1,649 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=Sofia+Sans+Condensed:wght@200&display=swap");
+
+@font-face {
+  font-family: BRUX;
+  src: url("./fonts/BRUX.ttf");
+}
+
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+  --secondary: rgb(162, 43, 27);
+  --bg-gradient: linear-gradient(
+    90deg,
+    rgb(31, 79, 168) 0%,
+    rgba(59, 68, 82, 1) 100%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar styling: */
+.navbar {
+  position: fixed;
+  width: 100%;
+  /* width: calc(100vw - 30px); */
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nav-title .title {
+  font-size: 28px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.nav-title h3 {
+  font-size: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.navbar nav {
+  padding: 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar nav div {
+  padding: 0 20px 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar li {
+  margin: 0px 15px;
+  padding: 5px 12px;
+}
+
+.navbar a {
+  text-decoration: None;
+  color: black;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.navbar div li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar div li span {
+  font-size: 15px;
+  font-family: "BRUX", sans-serif;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.logout-button {
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover,
+.predict-container .predict-options :active {
+  background-color: rgb(255, 255, 255);
+}
+
+.logout-button:hover{
+  color: var(--secondary);
+}
+
+.logout-button:active {
+  background-color: black;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:disabled {
+  background-color: #cccccc; 
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.navbar li:hover a {
+  color: var(--error);
+}
+
+.navbar button {
+  color: black;
+  border: 2px solid black;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 17px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.container-homePage {
+  margin: 0 auto;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.container-homePage {
+  position: relative;
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.section1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.section1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.section1 .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.section1 h1 {
+  font-size: 60px;
+  font-family: BRUX;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+
+  color: white;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+    0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+    0 15px 20px rgba(0, 0, 0, 0.9);
+}
+
+.section1 h2 {
+  font-size: 45px;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  color: rgb(255, 255, 255);
+}
+
+.section1 .tagline {
+  font-size: 20px;
+  font-family: "comic sans ms";
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  color: rgb(233, 246, 167);
+}
+
+.section1 button {
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+  font-size: 22px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 2px;
+  padding: 16px 42px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 0 solid;
+  box-shadow: inset 0 0 35px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.section1 button:hover {
+  border: 7px double rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 35px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 20px;
+  text-shadow: 1px 1px 2px #427388;
+}
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20px;
+}
+
+.arrows path {
+  stroke: #01070a;
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+.section2 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("images/abstract_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.9);
+}
+
+.section2 h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--primary);
+}
+
+.section2 .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+  font-family: "Comic Sans MS";
+}
+
+.section2 p {
+  font-size: 1.35rem;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 70vw;
+}
+
+.section2 h3 {
+  font-size: 2.3rem;
+  color: black;
+}
+
+/* Section 3 */
+.section3 {
+  min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("images/abstract_bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.9);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.section3 ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0%;
+}
+
+.section3 li {
+  text-align: center;
+  display: block;
+  width: 30%;
+  height: 80%;
+  padding: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  background-color: rgba(252, 218, 224, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.section3 li h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.section3 li p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.section3 img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.section3 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+/* prediction page styling: */
+.predictionpage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  padding-top: 85px;
+  min-height: calc(100vh - 100px);
+  background-image: url("images/abstract_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: brightness(0.9);
+}
+
+.predict-container {
+  min-height: 450px;
+  min-width: 340px;
+  /* background-color: pink; */
+}
+
+.predict-options {
+  position: relative;
+  top: 10px;
+  display: flex;
+  /* background-color: green; */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.predict-btn {
+  margin: 5px;
+  padding: 10px 12px;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+
+}
+
+.predict-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  /* background-color: #1aac83; */
+  min-height: calc(450px - 70px);
+}
+
+/* SelectImage component styling */
+.active {
+  background-color: var(--primary);
+}
+
+.deactive {
+  background-color: var(--secondary);
+}
+
+.options-container {
+  min-height: 290px;
+  min-width: 300px;
+  background-color: #cbfff5;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border: 3px dotted var(--secondary);
+}
+
+.selectField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.selectField-label {
+  padding: 12px 8px;
+  margin: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 22px;
+  color: var(--secondary);
+}
+
+.selectField-select {
+  padding: 10px;
+  text-align: center;
+  border: 1px black solid;
+}
+
+select {
+  width: 240px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border: 1px solid #0a0a0a;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+select option:checked {
+  background-color: #e0e0e0;
+}
+
+select option:hover {
+  background-color: #f2f2f2;
+}
+/*  predict page container form*/
+.predictionpage-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.predictionpage-container form .submit {
+  background-color: var(--secondary);
+  color: #f7f6f0;
+  border: none;
+  padding: 10px 24px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  margin-top: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+
+}
+
+.predictionpage-container form .submit:hover {
+  background-color: var(--secondary);
+}
+
+.prediction-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* DiseaseDetails component styling: */
+.disease-details {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.disease-details h1,
+.disease-details h2 {
+  color: var(--primary);
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.disease-details h2 {
+  margin-bottom: 20px;
+}
+
+.disease-details .download-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: relative;
+  float: right;
+}
+
+/* DiseaseInfoCard component styling: */
+
+.Disease-info-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ddefe8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  background-image: url("images/abstract_bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* filter: brightness(0.5); */
+}
+
+.Disease-info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background-color: var(--primary);
+  border-radius: 4px 0 0 4px;
+}
+
+.Disease-info-card h1 {
+  color: var(--secondary);
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.Disease-info-card li {
+  margin-top: 10px;
+  line-height: 1.4;
+}
